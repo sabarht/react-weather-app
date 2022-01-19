@@ -1,0 +1,30 @@
+.Weather {
+  width: 800px;
+  border: 1px solid #4e4d4d;
+  border-radius: 4px;
+  display: block;
+  margin: 32px 0;
+  padding: 16px;
+}
+.Weather form {
+  margin: 12px 0;
+}
+.Weather li {
+  list-style: none;
+  text-align: left;
+}
+.Weather ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+.city {
+  margin: 16px 0;
+}
+.forecast {
+  padding: 0;
+}
+.forecast li {
+  text-align: center;
+  padding: 4px 12px;
+  background-color: bisque;
+}

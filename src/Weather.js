@@ -3,14 +3,22 @@ export default function Weather() {
   return (
     <div className="Weather">
       <div className="row">
-        <div className="col-8">
-          <form className="w-75">
-            <input type="search" placeholder="type a city" />
-
-            <input type="submit" value="Search" />
+        <div className="col-md-8">
+          <form>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  className="w-100"
+                  type="search"
+                  placeholder="type a city"
+                />
+              </div>
+              <div className="col-3">
+                <input className="w-100" type="submit" value="Search" />
+              </div>
+            </div>
           </form>
-
-          <h2>Tehran, Iran</h2>
+          <h2 className="city">Tehran, Iran</h2>
           <h1>23</h1>
           <div className="row">
             <div className="col">
@@ -32,18 +40,55 @@ export default function Weather() {
             </div>
           </div>
         </div>
-        <div className="col-4">
-          <ul className="forecast">
-            <li>
-              {" "}
-              <span className="forecast-day">Tue</span>{" "}
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
+        <div className="col-md-4">
+          <ul className="forecast d-flex flex-row flex-md-column ">
+            <div className="d-flex">
+              <li className="flex-column flex-md-row">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
 "
-              />{" "}
-              <span>18</span>
-              <img />
-            </li>
+                />
+                <span>18 / 12</span>
+              </li>
+              <li className="flex-column flex-md-row">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
+"
+                />
+                <span>18 / 12</span>
+              </li>
+              <li className="flex-column flex-md-row">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
+"
+                />
+                <span>18 / 12</span>
+              </li>
+              <li className="flex-column flex-md-row">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
+"
+                />
+                <span>18 / 12</span>
+              </li>
+              <li>
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png
+"
+                />
+                <span>18 / 12</span>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
