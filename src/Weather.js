@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
   function getWeather(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
-      humadity: response.data.main.humidity,
-      date: "wednesday",
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       iconUrl: `https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png`,
       wind: response.data.wind.speed,
@@ -19,7 +20,7 @@ export default function Weather(props) {
   }
   function search() {
     const apiKey = "3586082911a3bafc0ae4afd4377c0a7c";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric `;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric `;
     axios.get(apiUrl).then(getWeather);
   }
 
@@ -46,7 +47,9 @@ export default function Weather(props) {
             <h1>{Math.round(weatherData.temperature)}</h1>
             <div className="row">
               <div className="col">
-                <p>{weatherData.date}</p>
+                <p>
+                  <FormattedDate date={weatherData.date} />
+                </p>
               </div>
               <div className="col">
                 <p className="text-capitilize">{weatherData.description}</p>
