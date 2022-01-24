@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   function getWeather(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
+      temperature: response.data.main.temp,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -18,18 +19,25 @@ export default function Weather(props) {
       city: response.data.name,
     });
   }
+
   function search() {
     const apiKey = "3586082911a3bafc0ae4afd4377c0a7c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric `;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric `;
     axios.get(apiUrl).then(getWeather);
   }
-
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCity(event) {
+    setCity(event.target.value);
+  }
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="row">
           <div className="col-md-8">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">
                   <input
@@ -39,33 +47,16 @@ export default function Weather(props) {
                   />
                 </div>
                 <div className="col-3">
-                  <input className="w-100" type="submit" value="Search" />
+                  <input
+                    onChange={handleCity}
+                    className="w-100"
+                    type="submit"
+                    value="Search"
+                  />
                 </div>
               </div>
             </form>
-            <h2 className="city">{weatherData.city}</h2>
-            <h1>{Math.round(weatherData.temperature)}</h1>
-            <div className="row">
-              <div className="col">
-                <p>
-                  <FormattedDate date={weatherData.date} />
-                </p>
-              </div>
-              <div className="col">
-                <p className="text-capitilize">{weatherData.description}</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <ul>
-                  <li>Humidity: {weatherData.humidity}%</li>
-                  <li>Wind: {weatherData.wind} km/h</li>
-                </ul>
-              </div>
-              <div className="col">
-                <img src={weatherData.iconUrl} alt={weatherData.description} />
-              </div>
-            </div>
+            <WeatherInfo data={weatherData} />
           </div>
 
           <div className="col-md-4 d-flex ">
