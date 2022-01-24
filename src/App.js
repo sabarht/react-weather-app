@@ -6,13 +6,13 @@ function App() {
     <div className="App">
       <div className="containter">
         <h1>Weather App</h1>
-        <Weather
-          defaultCity="Paris
-      "
-        />
+        <Weather defaultCity="Paris" />
         <footer>
           This project was coded by Saba Rahrotaban and is{" "}
-          <a href="https://nervous-haibt-37ab66.netlify.app/" target="_blank">
+          <a
+            href="https://github.com/sabarht/react-weather-app"
+            target="_blank"
+          >
             open-sourced on Github.
           </a>
         </footer>
