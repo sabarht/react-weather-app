@@ -8,9 +8,7 @@ export default function WeatherInfo(props) {
       <h1>{Math.round(props.data.temperature)}</h1>
       <div className="row">
         <div className="col">
-          <p>
-            <FormattedDate date={props.data.date} />
-          </p>
+          <FormattedDate date={props.data.date} />
         </div>
         <div className="col">
           <p className="text-capitilize">{props.data.description}</p>

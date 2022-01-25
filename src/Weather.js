@@ -7,6 +7,7 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function getWeather(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -14,7 +15,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: `https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png`,
+      iconUrl: ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -41,18 +42,14 @@ export default function Weather(props) {
               <div className="row">
                 <div className="col-9">
                   <input
+                    onChange={handleCity}
                     className="w-100"
                     type="search"
                     placeholder="type a city"
                   />
                 </div>
                 <div className="col-3">
-                  <input
-                    onChange={handleCity}
-                    className="w-100"
-                    type="submit"
-                    value="Search"
-                  />
+                  <input className="w-100" type="submit" value="Search" />
                 </div>
               </div>
             </form>
