@@ -1,11 +1,14 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <h2 className="city">{props.data.city}</h2>
-      <h1>{Math.round(props.data.temperature)}</h1>
+
+      <WeatherTemperature celsius={props.data.temperature} />
+
       <div className="row">
         <div className="col">
           <FormattedDate date={props.data.date} />
