@@ -60,25 +60,37 @@ export default function Weather(props) {
             <ul className="forecast d-flex flex-row flex-md-column ">
               <li className="flex-column flex-md-row ">
                 <span className="forecast-day">Tue</span>{" "}
-                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="weather-icon"
+                />
                 <span>18 / 12</span>
               </li>
               <li className="flex-column flex-md-row ">
                 {" "}
                 <span className="forecast-day">Tue</span>{" "}
-                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="weather-icon"
+                />
                 <span>18 / 12</span>
               </li>
               <li className="flex-column flex-md-row ">
                 {" "}
                 <span className="forecast-day">Tue</span>{" "}
-                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="weather-icon"
+                />
                 <span>18 / 12</span>
               </li>
               <li className="flex-column flex-md-row ">
                 {" "}
                 <span className="forecast-day">Tue</span>{" "}
-                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                  alt="weather-icon"
+                />
                 <span>18 / 12</span>
               </li>
             </ul>
