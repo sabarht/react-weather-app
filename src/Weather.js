@@ -43,7 +43,7 @@ export default function Weather(props) {
                 <div className="col-9">
                   <input
                     onChange={handleCity}
-                    className="w-100"
+                    className="w-100 ps-2"
                     type="search"
                     placeholder="type a city"
                   />
@@ -56,14 +56,26 @@ export default function Weather(props) {
             <WeatherInfo data={weatherData} />
           </div>
 
-          <div className="col-md-4 d-flex ">
-            <ul className="forecast flex-row flex-md-column ">
+          <div className="col-md-4">
+            <ul className="forecast d-flex flex-row flex-md-column ">
               <li className="flex-column flex-md-row ">
                 <span className="forecast-day">Tue</span>{" "}
                 <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
                 <span>18 / 12</span>
               </li>
-              <li>
+              <li className="flex-column flex-md-row ">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <span>18 / 12</span>
+              </li>
+              <li className="flex-column flex-md-row ">
+                {" "}
+                <span className="forecast-day">Tue</span>{" "}
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />
+                <span>18 / 12</span>
+              </li>
+              <li className="flex-column flex-md-row ">
                 {" "}
                 <span className="forecast-day">Tue</span>{" "}
                 <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" />

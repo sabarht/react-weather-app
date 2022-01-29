@@ -1,29 +1,48 @@
 .Weather {
-  width: 800px;
-  border: 1px solid #4e4d4d;
-  border-radius: 4px;
+  background: radial-gradient(
+    328px at 2.9% 15%,
+    rgb(232, 233, 251) 36.8%,
+    rgb(252, 239, 250) 77.6%
+  );
+  width: 600px;
+  border: 1px solid #d2bbe2;
+  border-radius: 12px;
   display: block;
-  margin: 32px 0;
-  padding: 16px;
+  padding: 24px;
 }
 .Weather form {
-  margin: 12px 0;
+  margin: 4px 0;
 }
-.Weather li {
+input {
+  padding: 4px;
+  border: 1px solid #dbdbdb;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.Weather ul {
   list-style: none;
   text-align: left;
-}
-.Weather ul {
   padding: 0;
   margin-bottom: 0;
 }
 .city {
   margin: 16px 0;
 }
+
 .forecast {
-  padding: 0;
+  background: rgb(191, 224, 251);
+  border-radius: 12px;
 }
 .forecast li {
   margin: 0 auto;
+  display: block;
   padding: 4px 12px;
+}
+.temperature {
+  font-family: "Lora", serif;
+  font-size: 42px;
+}
+.unit {
+  font-size: 16px;
 }
