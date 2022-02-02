@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 
@@ -17,6 +18,8 @@ export default function Weather(props) {
       iconUrl: ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lat,
     });
   }
 
@@ -56,43 +59,7 @@ export default function Weather(props) {
           </div>
 
           <div className="col-md-4">
-            <ul className="forecast d-flex flex-row flex-md-column ">
-              <li className="flex-column flex-md-row ">
-                <span className="forecast-day">Tue</span>{" "}
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                  alt="weather-icon"
-                />
-                <span>18 / 12</span>
-              </li>
-              <li className="flex-column flex-md-row ">
-                {" "}
-                <span className="forecast-day">Tue</span>{" "}
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                  alt="weather-icon"
-                />
-                <span>18 / 12</span>
-              </li>
-              <li className="flex-column flex-md-row ">
-                {" "}
-                <span className="forecast-day">Tue</span>{" "}
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                  alt="weather-icon"
-                />
-                <span>18 / 12</span>
-              </li>
-              <li className="flex-column flex-md-row ">
-                {" "}
-                <span className="forecast-day">Tue</span>{" "}
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                  alt="weather-icon"
-                />
-                <span>18 / 12</span>
-              </li>
-            </ul>
+            <WeatherForecast lon={weatherData.lon} lat={weatherData.lat} />
           </div>
         </div>
       </div>
