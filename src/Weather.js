@@ -18,8 +18,7 @@ export default function Weather(props) {
       iconUrl: ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
-      lat: response.data.coord.lat,
-      lon: response.data.coord.lat,
+      coordinates: response.data.coord,
     });
   }
 
@@ -45,13 +44,17 @@ export default function Weather(props) {
                 <div className="col-9">
                   <input
                     onChange={handleCity}
-                    className="w-100 ps-2"
+                    className="w-100 ps-3"
                     type="search"
                     placeholder="type a city"
                   />
                 </div>
                 <div className="col-3">
-                  <input className="w-100" type="submit" value="Search" />
+                  <input
+                    className="w-100 button"
+                    type="submit"
+                    value="Search"
+                  />
                 </div>
               </div>
             </form>
@@ -59,7 +62,7 @@ export default function Weather(props) {
           </div>
 
           <div className="col-md-4">
-            <WeatherForecast lon={weatherData.lon} lat={weatherData.lat} />
+            <WeatherForecast coordinates={weatherData.coordinates} />
           </div>
         </div>
       </div>

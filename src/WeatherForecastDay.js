@@ -14,17 +14,17 @@ export default function WeatherForecastDay(props) {
     return temperature;
   }
   return (
-    <div>
-      <div className="forecast-day align-middle text-center">{day()}</div>
+    <div className="d-flex flex-row ">
+      <div className="forecast-day px-1">{day()}</div>
       <div>
         <img
           src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
           alt="weather-icon"
         />
       </div>
-      <div className="align-middle text-center">
-        <span>{maxTemperature()} </span>
-        <span>/{minTemperature()}</span>
+      <div className="align-middle text-center px-1">
+        <span>{maxTemperature()}°</span>
+        <span>/{minTemperature()}°</span>
       </div>
     </div>
   );
