@@ -61,6 +61,7 @@ export default function Weather(props) {
             <img
               src={require("./Weather_Two Color.svg").default}
               className="weather-pic"
+              alt="weather forecast illstration"
             />
             <WeatherInfo data={weatherData} />
           </div>
