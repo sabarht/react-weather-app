@@ -1,14 +1,11 @@
 .Weather {
-  background: radial-gradient(
-    328px at 2.9% 15%,
-    rgb(232, 233, 251) 36.8%,
-    rgb(252, 239, 250) 77.6%
-  );
-  width: 600px;
+  background-color: #1a77cd23;
+  color: rgb(61, 61, 61);
+  width: 640px;
   border: 1px solid #d2bbe2;
   border-radius: 12px;
   display: block;
-  padding: 24px;
+  padding: 20px;
 }
 .Weather form {
   margin: 4px 0;
@@ -19,6 +16,12 @@ input {
   border-radius: 16px;
   box-shadow: none;
 }
+.button {
+  background-color: #f0f2fa;
+  padding: 4px;
+  border-radius: 16px;
+  border: #1a77cd solid 1px;
+}
 
 .Weather ul {
   list-style: none;
@@ -28,21 +31,31 @@ input {
 }
 .city {
   margin: 16px 0;
+  font-size: 40px;
 }
 
 .forecast {
-  background: rgb(191, 224, 251);
-  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  background: #1a77cd;
+  border-radius: 16px;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 2px 3px 10px 2px rgba(7, 49, 141, 0.288);
 }
-.forecast li {
-  margin: 0 auto;
-  display: block;
-  padding: 4px 12px;
-}
+
 .temperature {
   font-family: "Lora", serif;
-  font-size: 42px;
+  font-size: 64px;
 }
 .unit {
-  font-size: 16px;
+  font-size: 32px;
+}
+.icon {
+  padding: 4px 6px;
+  border-radius: 12px;
+  background-color: #56f8f813;
+}
+.weather-pic {
+  width: 228px;
+  float: right;
 }

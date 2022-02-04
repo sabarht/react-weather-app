@@ -15,7 +15,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
       coordinates: response.data.coord,
@@ -38,7 +38,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-8">
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">
@@ -58,10 +58,14 @@ export default function Weather(props) {
                 </div>
               </div>
             </form>
+            <img
+              src={require("./Weather_Two Color.svg").default}
+              className="weather-pic"
+            />
             <WeatherInfo data={weatherData} />
           </div>
 
-          <div className="col-md-4">
+          <div className="col-4">
             <WeatherForecast coordinates={weatherData.coordinates} />
           </div>
         </div>
