@@ -16,12 +16,15 @@ export default function WeatherForecastDay(props) {
     return temperature;
   }
   return (
-    <div className="d-flex flex-row py-2">
-      <div className="forecast-day p-2">{day()}</div>
-      <div className="icon">
+    <div
+      className="d-flex py-2 justify-content-between
+    "
+    >
+      <div className="forecast-day padding-md">{day()}</div>
+      <div className="icon ">
         <WeatherIcon code={props.data.weather[0].icon} size={36} />
       </div>
-      <div className="align-middle text-center p-2">
+      <div className="padding-md">
         <span>{maxTemperature()}°</span>
         <span>/{minTemperature()}°</span>
       </div>
