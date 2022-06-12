@@ -24,7 +24,7 @@ export default function WeatherForecastDay(props) {
       <div className="icon ">
         <WeatherIcon code={props.data.weather[0].icon} size={36} />
       </div>
-      <div className="padding-md">
+      <div className="padding-md daily-temp">
         <span>{maxTemperature()}°</span>
         <span>/{minTemperature()}°</span>
       </div>

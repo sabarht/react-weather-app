@@ -38,7 +38,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="row">
-          <div className="col-8">
+          <div className=" col-8">
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">

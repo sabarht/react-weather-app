@@ -17,7 +17,7 @@ export default function WeatherForecast(props) {
   }
   if (loaded) {
     return (
-      <div className="forecast d-flex flex-column">
+      <div className="forecast .row py-3">
         {forecast.map(function (dailyForecast, index) {
           if (index < 5) {
             return (

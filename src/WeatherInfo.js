@@ -25,7 +25,7 @@ export default function WeatherInfo(props) {
             <li>Wind: {props.data.wind} km/h</li>
           </ul>
         </div>
-        <div className="col">
+        <div className="col opacity-75">
           <WeatherIcon code={props.data.icon} alt={props.data.description} />
         </div>
       </div>
